@@ -1,0 +1,29 @@
+# Contributor:
+# Maintainer:
+pkgname=font-inter
+pkgver=3.15
+pkgrel=1
+pkgdesc="A typeface specially designed for user interfaces"
+url="https://github.com/rsms/inter/"
+arch="noarch"
+license="OFL"
+makedepends=""
+source="https://github.com/rsms/inter/releases/download/v$pkgver/Inter-$pkgver.zip"
+builddir="$srcdir/"
+
+build() {
+	:
+}
+
+check() {
+	:
+}
+
+package() {
+	cd "$builddir"
+	install -d "$pkgdir/usr/share/fonts/inter"
+	install -m644 -t "$pkgdir/usr/share/fonts/inter" 'Inter Desktop'/*.otf
+	install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/inter-font/LICENSE.txt"
+}
+
+sha512sums="a5da7d88b21be8a1a2c3fdc6b33bb5b750c4ee56719cade20643da0ecf7247b0939170ba78c6f024d2830dfcb61c9c4f1f9888f7a092ddc4c6d9cb6cae52aafc  Inter-3.15.zip"
